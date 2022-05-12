@@ -1,14 +1,24 @@
-import Tarefa from "../model/Tarefa";
+import ListaItem from "../components/lista/ListaItem";
+import Selecao from "../components/lista/Selecao";
 
 export default function Home() {
-  let tarefa: Tarefa = new Tarefa(1, "Exemplo tarefa");
-  tarefa = tarefa.altenarStatus();
-
   return (
-    <div className="flex flex-col bg-purple-600 justify-center items-center text-white h-screen bg-gradient-to-tr from-purple-500 to-yellow-600">
-      <span>{tarefa.id}</span>
-      <span>{tarefa.descricao}</span>
-      <span>{tarefa.concluida ? "Sim" : "Não"}</span>
+    <div
+      className="flex flex-col justify-center items-center h-screen
+     text-white bg-gradient-to-tr from-gray-600 to-gray-900"
+    >
+      <ul>
+        <ListaItem
+          valor="Exemplo de item #01"
+          concluido={false}
+          alterarStatus={() => {}}
+        />
+        <ListaItem
+          valor="Exemplo de item #02"
+          concluido
+          alterarStatus={() => {}}
+        />
+      </ul>
     </div>
   );
 }
