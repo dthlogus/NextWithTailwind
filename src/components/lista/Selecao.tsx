@@ -1,3 +1,5 @@
+import { Check } from "phosphor-react";
+
 interface SelecaoProps {
   valor: boolean;
 }
@@ -14,7 +16,7 @@ export default function Selecao(props: SelecaoProps) {
         rounded-full cursor-pointer text-white
         border border-gray-400 ${gradiente}`}
     >
-      {props.valor ? "X" : ""}
+      {props.valor ? <Check size={20} color="#ffffff" weight="bold" /> : ""}
     </div>
   );
 }
